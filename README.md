@@ -3,58 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ニュース一覧テスト</title>
+    <title>商品一覧テスト</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
         }
-        .news-list {
-            list-style: none;
-            padding: 0;
+        .product-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
         }
-        .news-list li {
-            margin-bottom: 10px;
-            border-bottom: 1px dotted #ccc;
-            padding-bottom: 10px;
-        }
-        .news-list li a {
-            text-decoration: none;
-            color: #0066cc;
+        .product-name {
             font-weight: bold;
+            margin-bottom: 5px;
         }
-        .news-list li span {
-            font-size: 0.9em;
-            color: #666;
-            margin-left: 10px;
+        .product-price {
+            color: #e60000;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product-stock {
+            color: green;
+        }
+        .product-item.sold-out .product-stock {
+            color: red;
         }
     </style>
 </head>
 <body>
-    <h1>最新ニュース</h1>
-    <ul class="news-list">
-        <li>
-            <a href="article1.html">タイトル1：新技術が発表されました</a>
-            <span>(2025/05/22)</span>
-        </li>
-        <li>
-            <a href="article2.html">タイトル2：経済指標が改善傾向に</a>
-            <span>(2025/05/21)</span>
-        </li>
-        <li>
-            <a href="article3.html">タイトル3：地域イベント開催のお知らせ</a>
-            <span>(2025/05/20)</span>
-        </li>
-        <li>
-            <a href="article4.html">タイトル4：スポーツ大会の結果速報</a>
-            <span>(2025/05/19)</span>
-        </li>
-    </ul>
-
-    <h2>カテゴリ別ニュース</h2>
-    <ul class="category-news-list">
-        <li><a href="category_a.html">カテゴリAのニュース</a></li>
-        <li><a href="category_b.html">カテゴリBのニュース</a></li>
-    </ul>
+    <h1>商品一覧</h1>
+    <div class="product-list">
+        <div class="product-item">
+            <p class="product-name">商品A</p>
+            <p class="product-price">¥1,980</p>
+            <p class="product-stock">在庫あり</p>
+        </div>
+        <div class="product-item">
+            <p class="product-name">商品B</p>
+            <p class="product-price">¥2,500</p>
+            <p class="product-stock">残りわずか</p>
+        </div>
+        <div class="product-item">
+            <p class="product-name">商品C</p>
+            <p class="product-price">¥980</p>
+            <p class="product-stock">在庫あり</p>
+        </div>
+        <div class="product-item sold-out">
+            <p class="product-name">商品D</p>
+            <p class="product-price">¥3,200</p>
+            <p class="product-stock">品切れ</p>
+        </div>
+        <div class="product-item">
+            <p class="product-name">商品E</p>
+            <p class="product-price">¥1,200</p>
+            <p class="product-stock">在庫あり</p>
+        </div>
+    </div>
 </body>
 </html>
